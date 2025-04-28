@@ -5,6 +5,21 @@
 		"factoryName": {
 			"value": "kapoor-data"
 		},
+		"AdvWorksDB_password": {
+			"value": ""
+		},
+		"AzureBlobStorageProducts_connectionString": {
+			"value": ""
+		},
+		"AdvWorksDB_properties_typeProperties_server": {
+			"value": "kapoorserver.database.windows.net"
+		},
+		"AdvWorksDB_properties_typeProperties_database": {
+			"value": "kapoordatabase"
+		},
+		"AdvWorksDB_properties_typeProperties_userName": {
+			"value": "kapoor"
+		},
 		"containerUri": {
 			"value": ""
 		},
