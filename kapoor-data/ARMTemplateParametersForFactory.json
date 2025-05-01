@@ -17,6 +17,9 @@
 		"AzureBlobcustomer_connectionString": {
 			"value": ""
 		},
+		"AzureBlobStorage1productmarkup_connectionString": {
+			"value": ""
+		},
 		"AdvWorksDB_properties_typeProperties_server": {
 			"value": "kapoorserver.database.windows.net"
 		},

@@ -23,6 +23,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobcustomer'"
 		},
+		"AzureBlobStorage1productmarkup_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1productmarkup'"
+		},
 		"AdvWorksDB_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "kapoorserver.database.windows.net"
@@ -73,6 +77,9 @@
 					},
 					"AzureBlobcustomer_connectionString": {
 						"value": "[parameters('AzureBlobcustomer_connectionString')]"
+					},
+					"AzureBlobStorage1productmarkup_connectionString": {
+						"value": "[parameters('AzureBlobStorage1productmarkup_connectionString')]"
 					},
 					"AdvWorksDB_properties_typeProperties_server": {
 						"value": "[parameters('AdvWorksDB_properties_typeProperties_server')]"
