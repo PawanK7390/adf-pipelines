@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
 					"name": "sink1"
 				}
 			],
@@ -50,6 +54,22 @@
 				"          {total stars} = toInteger(star_1f)+toInteger(star_2f)+toInteger(star_3f)+toInteger(star_4f)+toInteger(star_5f)) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          id as string,",
+				"          title as string,",
+				"          Rating as string,",
+				"          maincateg as string,",
+				"          platform as string,",
+				"          actprice1 as string,",
+				"          norating1 as string,",
+				"          noreviews1 as string,",
+				"          star_5f as string,",
+				"          star_4f as string,",
+				"          star_3f as string,",
+				"          star_2f as string,",
+				"          star_1f as string,",
+				"          fulfilled1 as string",
+				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
