@@ -673,7 +673,7 @@
 				],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "TripFares"
+					"table": "TripData"
 				}
 			},
 			"dependsOn": [
