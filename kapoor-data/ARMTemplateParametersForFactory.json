@@ -8,6 +8,9 @@
 		"ADLSGen2_accountKey": {
 			"value": ""
 		},
+		"ADLSTripData_accountKey": {
+			"value": ""
+		},
 		"AdvWorksDB_password": {
 			"value": ""
 		},
@@ -23,7 +26,13 @@
 		"AzureBlobcustomer_connectionString": {
 			"value": ""
 		},
+		"TaxiTripDB_password": {
+			"value": ""
+		},
 		"ADLSGen2_properties_typeProperties_url": {
+			"value": "https://kapoordatalake.dfs.core.windows.net/"
+		},
+		"ADLSTripData_properties_typeProperties_url": {
 			"value": "https://kapoordatalake.dfs.core.windows.net/"
 		},
 		"AdvWorksDB_properties_typeProperties_server": {
@@ -33,6 +42,15 @@
 			"value": "kapoordatabase"
 		},
 		"AdvWorksDB_properties_typeProperties_userName": {
+			"value": "kapoor"
+		},
+		"TaxiTripDB_properties_typeProperties_server": {
+			"value": "kapoorserver.database.windows.net"
+		},
+		"TaxiTripDB_properties_typeProperties_database": {
+			"value": "taxi-data"
+		},
+		"TaxiTripDB_properties_typeProperties_userName": {
 			"value": "kapoor"
 		}
 	}
