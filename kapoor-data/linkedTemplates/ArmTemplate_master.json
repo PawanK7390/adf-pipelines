@@ -7,9 +7,17 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "kapoor-data"
 		},
+		"ADLSGen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLSGen2'"
+		},
 		"AdvWorksDB_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AdvWorksDB'"
+		},
+		"AzureBlobStorage1productmarkup_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1productmarkup'"
 		},
 		"AzureBlobStorageCustomer_connectionString": {
 			"type": "secureString",
@@ -23,9 +31,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobcustomer'"
 		},
-		"AzureBlobStorage1productmarkup_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1productmarkup'"
+		"ADLSGen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://kapoordatalake.dfs.core.windows.net/"
 		},
 		"AdvWorksDB_properties_typeProperties_server": {
 			"type": "string",
@@ -66,8 +74,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"ADLSGen2_accountKey": {
+						"value": "[parameters('ADLSGen2_accountKey')]"
+					},
 					"AdvWorksDB_password": {
 						"value": "[parameters('AdvWorksDB_password')]"
+					},
+					"AzureBlobStorage1productmarkup_connectionString": {
+						"value": "[parameters('AzureBlobStorage1productmarkup_connectionString')]"
 					},
 					"AzureBlobStorageCustomer_connectionString": {
 						"value": "[parameters('AzureBlobStorageCustomer_connectionString')]"
@@ -78,8 +92,8 @@
 					"AzureBlobcustomer_connectionString": {
 						"value": "[parameters('AzureBlobcustomer_connectionString')]"
 					},
-					"AzureBlobStorage1productmarkup_connectionString": {
-						"value": "[parameters('AzureBlobStorage1productmarkup_connectionString')]"
+					"ADLSGen2_properties_typeProperties_url": {
+						"value": "[parameters('ADLSGen2_properties_typeProperties_url')]"
 					},
 					"AdvWorksDB_properties_typeProperties_server": {
 						"value": "[parameters('AdvWorksDB_properties_typeProperties_server')]"
@@ -93,6 +107,26 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "kapoor-data_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'kapoor-data_ArmTemplate_0')]"
+			]
 		}
 	]
 }

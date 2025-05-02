@@ -5,7 +5,13 @@
 		"factoryName": {
 			"value": "kapoor-data"
 		},
+		"ADLSGen2_accountKey": {
+			"value": ""
+		},
 		"AdvWorksDB_password": {
+			"value": ""
+		},
+		"AzureBlobStorage1productmarkup_connectionString": {
 			"value": ""
 		},
 		"AzureBlobStorageCustomer_connectionString": {
@@ -17,8 +23,8 @@
 		"AzureBlobcustomer_connectionString": {
 			"value": ""
 		},
-		"AzureBlobStorage1productmarkup_connectionString": {
-			"value": ""
+		"ADLSGen2_properties_typeProperties_url": {
+			"value": "https://kapoordatalake.dfs.core.windows.net/"
 		},
 		"AdvWorksDB_properties_typeProperties_server": {
 			"value": "kapoorserver.database.windows.net"
