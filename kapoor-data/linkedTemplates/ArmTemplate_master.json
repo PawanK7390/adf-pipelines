@@ -39,6 +39,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'TaxiTripDB'"
 		},
+		"TripAggregrateBlob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'TripAggregrateBlob'"
+		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://kapoordatalake.dfs.core.windows.net/"
@@ -121,6 +125,9 @@
 					},
 					"TaxiTripDB_password": {
 						"value": "[parameters('TaxiTripDB_password')]"
+					},
+					"TripAggregrateBlob_connectionString": {
+						"value": "[parameters('TripAggregrateBlob_connectionString')]"
 					},
 					"ADLSGen2_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen2_properties_typeProperties_url')]"
