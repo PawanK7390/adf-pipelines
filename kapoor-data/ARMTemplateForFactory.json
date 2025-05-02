@@ -1346,7 +1346,7 @@
 					],
 					"transformations": [
 						{
-							"name": "join1Trip"
+							"name": "joinTrip"
 						},
 						{
 							"name": "aggregatebyPaymentType"
@@ -1396,8 +1396,8 @@
 						"     joinType:'inner',",
 						"     matchType:'exact',",
 						"     ignoreSpaces: false,",
-						"     broadcast: 'auto')~> join1Trip",
-						"join1Trip aggregate(groupBy(payment_type),",
+						"     broadcast: 'auto')~> joinTrip",
+						"joinTrip aggregate(groupBy(payment_type),",
 						"     {average fare} = avg(toInteger(total_amount)),",
 						"          {total trip distance} = sum(toInteger(trip_distance))) ~> aggregatebyPaymentType",
 						"aggregatebyPaymentType sink(allowSchemaDrift: true,",
