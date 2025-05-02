@@ -32,6 +32,12 @@
 		"TripAggregrateBlob_connectionString": {
 			"value": ""
 		},
+		"flipkartblobsource_connectionString": {
+			"value": ""
+		},
+		"flipkartsinkblob_connectionString": {
+			"value": ""
+		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"value": "https://kapoordatalake.dfs.core.windows.net/"
 		},

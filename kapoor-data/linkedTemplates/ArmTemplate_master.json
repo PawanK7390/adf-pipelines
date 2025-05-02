@@ -43,6 +43,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'TripAggregrateBlob'"
 		},
+		"flipkartblobsource_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'flipkartblobsource'"
+		},
+		"flipkartsinkblob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'flipkartsinkblob'"
+		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://kapoordatalake.dfs.core.windows.net/"
@@ -128,6 +136,12 @@
 					},
 					"TripAggregrateBlob_connectionString": {
 						"value": "[parameters('TripAggregrateBlob_connectionString')]"
+					},
+					"flipkartblobsource_connectionString": {
+						"value": "[parameters('flipkartblobsource_connectionString')]"
+					},
+					"flipkartsinkblob_connectionString": {
+						"value": "[parameters('flipkartsinkblob_connectionString')]"
 					},
 					"ADLSGen2_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen2_properties_typeProperties_url')]"
