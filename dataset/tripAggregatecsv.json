@@ -1,0 +1,23 @@
+{
+	"name": "tripAggregatecsv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "TripAggregrateBlob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "TripAggregation.csv",
+				"container": "tripdatasink"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
