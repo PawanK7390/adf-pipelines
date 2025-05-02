@@ -1,5 +1,5 @@
 {
-	"name": "TripDataTable",
+	"name": "AzureSqlTable1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "TaxiTripDB",
@@ -67,7 +67,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "TripFares"
+			"table": "TripData"
 		}
 	}
 }
