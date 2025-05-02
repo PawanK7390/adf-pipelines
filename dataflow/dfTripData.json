@@ -19,10 +19,21 @@
 					"name": "source2tripdatatable"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "tripAggregatecsv",
+						"type": "DatasetReference"
+					},
+					"name": "sinkAggregatedTaxiData"
+				}
+			],
 			"transformations": [
 				{
 					"name": "join1Trip"
+				},
+				{
+					"name": "aggregatebyPaymentType"
 				}
 			],
 			"scriptLines": [
@@ -49,27 +60,34 @@
 				"          medallion as string,",
 				"          hack_license as string,",
 				"          vendor_id as string,",
-				"          rate_code as string,",
-				"          store_and_fwd_flag as string,",
 				"          pickup_datetime as string,",
-				"          dropoff_datetime as string,",
-				"          passenger_count as string,",
-				"          trip_time_in_secs as string,",
-				"          trip_distance as string,",
-				"          pickup_longitude as string,",
-				"          pickup_latitude as string,",
-				"          dropoff_longitude as string,",
-				"          dropoff_latitude as string",
+				"          payment_type as string,",
+				"          fare_amount as string,",
+				"          surcharge as string,",
+				"          mta_tax as string,",
+				"          tip_amount as string,",
+				"          tolls_amount as string,",
+				"          total_amount as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table') ~> source2tripdatatable",
-				"source1tripdatacsv, source2tripdatatable join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"source1tripdatacsv, source2tripdatatable join(source1tripdatacsv@medallion == source2tripdatatable@medallion",
+				"     && source1tripdatacsv@hack_license == source2tripdatatable@hack_license",
+				"     && source1tripdatacsv@vendor_id == source2tripdatatable@vendor_id",
+				"     && source1tripdatacsv@pickup_datetime == toTimestamp(source2tripdatatable@pickup_datetime),",
 				"     joinType:'inner',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
-				"     broadcast: 'auto')~> join1Trip"
+				"     broadcast: 'auto')~> join1Trip",
+				"join1Trip aggregate(groupBy(payment_type),",
+				"     {average fare} = avg(toInteger(total_amount)),",
+				"          {total trip distance} = sum(toInteger(trip_distance))) ~> aggregatebyPaymentType",
+				"aggregatebyPaymentType sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sinkAggregatedTaxiData"
 			]
 		}
 	}
