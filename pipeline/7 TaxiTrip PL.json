@@ -57,14 +57,7 @@
 			{
 				"name": "dfAggregrate",
 				"type": "ExecuteDataFlow",
-				"dependsOn": [
-					{
-						"activity": "CopyTaxiData",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
