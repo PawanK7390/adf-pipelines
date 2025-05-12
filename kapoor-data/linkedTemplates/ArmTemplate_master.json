@@ -51,6 +51,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'flipkartsinkblob'"
 		},
+		"KapoorstorageLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'KapoorstorageLinkedService'"
+		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://kapoordatalake.dfs.core.windows.net/"
@@ -143,6 +147,9 @@
 					"flipkartsinkblob_connectionString": {
 						"value": "[parameters('flipkartsinkblob_connectionString')]"
 					},
+					"KapoorstorageLinkedService_connectionString": {
+						"value": "[parameters('KapoorstorageLinkedService_connectionString')]"
+					},
 					"ADLSGen2_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen2_properties_typeProperties_url')]"
 					},
@@ -189,6 +196,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'kapoor-data_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "kapoor-data_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'kapoor-data_ArmTemplate_1')]"
 			]
 		}
 	]
