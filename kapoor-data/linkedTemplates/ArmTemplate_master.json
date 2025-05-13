@@ -35,6 +35,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobcustomer'"
 		},
+		"KapoorstorageLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'KapoorstorageLinkedService'"
+		},
 		"TaxiTripDB_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'TaxiTripDB'"
@@ -51,9 +55,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'flipkartsinkblob'"
 		},
-		"KapoorstorageLinkedService_connectionString": {
+		"AzureDatabricks_accessToken": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'KapoorstorageLinkedService'"
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks'"
 		},
 		"ADLSGen2_properties_typeProperties_url": {
 			"type": "string",
@@ -135,6 +139,9 @@
 					"AzureBlobcustomer_connectionString": {
 						"value": "[parameters('AzureBlobcustomer_connectionString')]"
 					},
+					"KapoorstorageLinkedService_connectionString": {
+						"value": "[parameters('KapoorstorageLinkedService_connectionString')]"
+					},
 					"TaxiTripDB_password": {
 						"value": "[parameters('TaxiTripDB_password')]"
 					},
@@ -147,8 +154,8 @@
 					"flipkartsinkblob_connectionString": {
 						"value": "[parameters('flipkartsinkblob_connectionString')]"
 					},
-					"KapoorstorageLinkedService_connectionString": {
-						"value": "[parameters('KapoorstorageLinkedService_connectionString')]"
+					"AzureDatabricks_accessToken": {
+						"value": "[parameters('AzureDatabricks_accessToken')]"
 					},
 					"ADLSGen2_properties_typeProperties_url": {
 						"value": "[parameters('ADLSGen2_properties_typeProperties_url')]"

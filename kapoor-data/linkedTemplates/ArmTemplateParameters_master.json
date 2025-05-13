@@ -26,6 +26,9 @@
 		"AzureBlobcustomer_connectionString": {
 			"value": ""
 		},
+		"KapoorstorageLinkedService_connectionString": {
+			"value": ""
+		},
 		"TaxiTripDB_password": {
 			"value": ""
 		},
@@ -38,7 +41,7 @@
 		"flipkartsinkblob_connectionString": {
 			"value": ""
 		},
-		"KapoorstorageLinkedService_connectionString": {
+		"AzureDatabricks_accessToken": {
 			"value": ""
 		},
 		"ADLSGen2_properties_typeProperties_url": {
