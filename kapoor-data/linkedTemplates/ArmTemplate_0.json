@@ -319,7 +319,7 @@
 				"annotations": [],
 				"type": "AzureDatabricks",
 				"typeProperties": {
-					"domain": "https://adb-336895239063479.19.azuredatabricks.net",
+					"domain": "https://adb-4146791391999753.13.azuredatabricks.net",
 					"accessToken": {
 						"type": "SecureString",
 						"value": "[parameters('AzureDatabricks_accessToken')]"
